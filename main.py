@@ -84,9 +84,8 @@ class AvtoAll:
                 soup = BeautifulSoup(category_page.text, features="html.parser")
                 items = soup.find(class_='list-compact')
                 items = items.find_all(class_='item')
-                count = 0
                 for item in items:
-                    count += 1
+
                     tag = item.find('a').get('href')
                     name = item.find(class_='item-name').text
                     code = item.find('small').text
@@ -95,7 +94,7 @@ class AvtoAll:
                     article = article.strip()
                     if type(tag) != int:
                         link = URL + tag[1:]
-                        print(Yellow, count, reset,  name, link, Red, code, reset, Green, article, reset)
+                        print(name, link, Red, code, reset, Green, article, reset)
                         result.append(
                             {
                                 'name': name, 'link': link
