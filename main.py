@@ -1,4 +1,3 @@
-import multiprocessing
 import time
 from bs4 import BeautifulSoup
 import requests
@@ -102,7 +101,6 @@ class AvtoAll:
                                 'name': name, 'link': link
                             }
                         )
-                        time.sleep(3)
         return result
 
 
